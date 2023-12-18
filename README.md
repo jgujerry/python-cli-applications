@@ -1,4 +1,4 @@
-# Python CLI application
+# Python CLI applications
 
 Exploring Python command-line interface (CLI) packages with example applications.
 
