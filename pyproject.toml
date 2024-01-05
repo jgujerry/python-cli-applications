@@ -1,0 +1,15 @@
+[project]
+name = "stock-cli"
+version = "0.1.0"
+description = "Build CLI applications by using Python packages"
+authors = [
+    {name = "jgujerry", email = "you@example.com"},
+]
+dependencies = []
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
