@@ -1,9 +1,10 @@
 import argparse
 
-from stock.core import Stock
+from stock.core import *
 
 
 def main():
+    print("Starting...")
     parser = argparse.ArgumentParser(
         prog="argparse-stock",
         description="Stock CLI app built with Python Argparse",
@@ -14,8 +15,9 @@ def main():
     
     # Info command
     subparsers = parser.add_subparsers(help="Available Commands")
-    subparsers.add_parser("hi-info")
-    parser.set_defaults(func=None)
+    info_parser = subparsers.add_parser("hi-info")
+    info_parser.add_argument("hello", metavar="Hello")
+    # info_parser.set_defaults(func=get_stock_info)
 
 
 if __name__ == "__main__":
