@@ -7,6 +7,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         'click',
+        'rich',
         'yfinance',
     ],
     entry_points={
