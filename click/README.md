@@ -10,4 +10,7 @@ Usage: stock [OPTIONS] COMMAND [ARGS]...
 
 Options:
   --help  Show this message and exit.
+
+Commands:
+  info  Show stock information for a given ticker
 ```
