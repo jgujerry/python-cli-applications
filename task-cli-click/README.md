@@ -27,8 +27,13 @@ When done, it should have `task-cli-click` package installed with version `0.0.1
 Validate the installation,
 
 ```bash
-$ task --help
+$ pip show task-cli-click
 ```
 
 ## 3. `task` CLI commands
 
+Use the commands by following the `--help` instruction,
+
+```bash
+$ task --help
+```
