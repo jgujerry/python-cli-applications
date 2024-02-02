@@ -5,7 +5,7 @@ from .info import info
 
 @click.group()
 def main():
-    """Stock CLI built with Click"""
+    """App CLI built with Click"""
     pass
 
 
