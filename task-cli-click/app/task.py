@@ -11,5 +11,5 @@ class Task:
     
     def run(self):
         print("Task starts to run...")
-        print(time.sleep(1))
+        time.sleep(1)
         print("Done!")
