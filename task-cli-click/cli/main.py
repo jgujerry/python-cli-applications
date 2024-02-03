@@ -1,3 +1,4 @@
+import sys
 import click
 
 from app.task import Task
@@ -8,34 +9,52 @@ def main():
     """App CLI built with Click"""
     pass
 
-
+#----------------------------------------------------------------
+# Command with argument
+#----------------------------------------------------------------
 @click.command()
-@click.option(
-    "-n", "--name",
-    required=True,
-    type=click.STRING,
-    help="Input the task name"
-)
-def info(name):
+@click.argument("name", type=click.STRING,)
+def show(name):
     """Show task info with given name"""    
     t = Task(name)
-    print(t.info())
+    print(t.show())
+
+
+#----------------------------------------------------------------
+# Command with argument, options
+#----------------------------------------------------------------
+def parse_parameters(ctx, param, value):
+    """Parase parameters from click options"""
+    params = {}
+    for item in value:
+        if "=" not in item:
+            print("Parameter should be in format: key=value")
+            sys.exit(1)
+        key, value = item.split("=")[0], "=".join(item.split("=")[1:])
+        if not key or not value:
+            print("Parameter should be in format: key=value")
+            sys.exit(1)
+        params[key] = value
+    return params
 
 
 @click.command()
+@click.argument("name", type=click.STRING)
 @click.option(
-    "-n", "--name",
-    required=True,
+    "-p", "--param",
+    required=False,
+    multiple=True,
     type=click.STRING,
-    help="Input the task name"
+    callback=parse_parameters,
+    help="Input the parameters",
 )
-def run(name):
+def run(name, param):
     """Run task with given name"""
     t = Task(name)
-    t.run()
+    t.run(params=param)
 
 
-main.add_command(info)
+main.add_command(show)
 main.add_command(run)
 
 
