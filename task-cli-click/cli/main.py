@@ -6,7 +6,7 @@ from app.task import Task
 
 @click.group()
 def main():
-    """App CLI built with Click"""
+    """Task CLI built with Click"""
     pass
 
 #----------------------------------------------------------------
@@ -54,8 +54,32 @@ def run(name, param):
     t.run(params=param)
 
 
+#----------------------------------------------------------------
+# Sub-command
+#----------------------------------------------------------------
+@click.group()
+def scheduler():
+    """Task sub-command"""
+    pass
+
+
+@scheduler.command()
+def start():
+    """Start task scheduler"""
+    print("Starting task scheduler...")
+    print("Started!")
+
+
+@scheduler.command()
+def stop():
+    """Stop task scheduler"""
+    print("Stopping task scheduler...")
+    print("Stopped!")
+
+
 main.add_command(show)
 main.add_command(run)
+main.add_command(scheduler)
 
 
 if __name__ == "__main__":
