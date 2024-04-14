@@ -1,6 +1,6 @@
 import argparse
 
-from stock.core import *
+from safekey import SafeKey
 
 
 def main():
