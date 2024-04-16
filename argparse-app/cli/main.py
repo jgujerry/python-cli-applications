@@ -6,8 +6,8 @@ from safekey import SafeKey
 def main():
     print("Starting...")
     parser = argparse.ArgumentParser(
-        prog="argparse-stock",
-        description="Stock CLI app built with Python Argparse",
+        prog="argparse-app",
+        description="A CLI app built with Python Argparse",
         epilog="Text at the bottom of help"
     )
     
