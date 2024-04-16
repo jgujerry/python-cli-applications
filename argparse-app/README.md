@@ -29,7 +29,12 @@ Install this CLI tool editabily,
 $ pip install -e .
 ```
 
-This would install the `safekey` package with `sk` command. Check this:
+This would install the `safekey` package with `sk` command. 
+
+
+## How to use this CLI tool?
+
+First, make sure you have the CLI tool installed correctly, using `--help` to validate the installation.
 
 ```bash
 $ sk --help
@@ -47,5 +52,4 @@ subcommands:
     update              Update a password
     remove              Remove a password
     list                List all passwords
-
 ```
