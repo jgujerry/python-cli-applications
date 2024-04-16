@@ -11,6 +11,12 @@ Create a virtual environment,
 $ python -m venv .venv
 ```
 
+The activate this virtual environment,
+
+```bash
+$ source .venv/bin/activate
+```
+
 Clone this repo and enter in the directory `argparse-app`,
 
 ```bash
