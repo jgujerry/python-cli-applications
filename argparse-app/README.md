@@ -33,4 +33,19 @@ This would install the `safekey` package with `sk` command. Check this:
 
 ```bash
 $ sk --help
+usage: sk [-h] {add,get,update,remove,list} ...
+
+SafeKey CLI Tool
+
+options:
+  -h, --help            show this help message and exit
+
+subcommands:
+  {add,get,update,remove,list}
+    add                 Add a new login
+    get                 Retrieve a password
+    update              Update a password
+    remove              Remove a password
+    list                List all passwords
+
 ```
