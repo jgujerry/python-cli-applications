@@ -53,3 +53,9 @@ subcommands:
     remove              Remove a password
     list                List all passwords
 ```
+
+Add a new login,
+
+```bash
+$ sk add --appname test.com --username tester --password test12345
+```
