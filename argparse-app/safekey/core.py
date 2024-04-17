@@ -1,6 +1,4 @@
-import argparse
 import json
-import hashlib
 from cryptography.fernet import Fernet
 
 # Generate a key for encryption
@@ -31,43 +29,43 @@ class SafeKey:
         return self.cipher.decrypt(encrypted_password.encode()).decode()
 
     def add_password(self, args):
-        website = args.website
+        appname = args.appname
         username = args.username
         password = args.password
         encrypted_password = self.encrypt_password(password)
-        self.passwords[website] = {'username': username, 'password': encrypted_password}
+        self.passwords[appname] = {'username': username, 'password': encrypted_password}
         self.save_passwords()
-        print(f"Password added for {website}")
+        print(f"Password added for {appname}")
 
     def get_password(self, args):
-        website_or_username = args.website_or_username
-        entry = self.passwords.get(website_or_username)
+        appname = args.appname
+        entry = self.passwords.get(appname)
         if entry:
-            print(f"Password for {website_or_username}: {self.decrypt_password(entry['password'])}")
+            print(f"Password for {appname}: {self.decrypt_password(entry['password'])}")
         else:
             print("Password not found")
 
     def update_password(self, args):
-        website_or_username = args.website_or_username
-        entry = self.passwords.get(website_or_username)
+        appname = args.appname
+        entry = self.passwords.get(appname)
         if entry:
             new_password = args.new_password
             encrypted_password = self.encrypt_password(new_password)
             entry['password'] = encrypted_password
             self.save_passwords()
-            print(f"Password updated for {website_or_username}")
+            print(f"Password updated for {appname}")
         else:
             print("Password not found")
 
     def remove_password(self, args):
-        website_or_username = args.website_or_username
-        if website_or_username in self.passwords:
-            del self.passwords[website_or_username]
+        appname = args.appname
+        if appname in self.passwords:
+            del self.passwords[appname]
             self.save_passwords()
-            print(f"Password removed for {website_or_username}")
+            print(f"Password removed for {appname}")
         else:
             print("Password not found")
 
     def list_passwords(self, args):
-        for website, details in self.passwords.items():
-            print(f"Website/App: {website}, Username: {details['username']}")
+        for appname, details in self.passwords.items():
+            print(f"Appname: {appname}, Username: {details['username']}")
