@@ -2,15 +2,16 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='task-cli-click',
+    name='click-app',
     version='0.0.1',
     packages=find_packages(),
     install_requires=[
         'click',
+        'cryptography'
     ],
     entry_points={
         'console_scripts': [
-            'task=cli.main:main',
+            'sk=cli.main:main',
         ],
     },
 )

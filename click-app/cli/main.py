@@ -1,85 +1,73 @@
 import sys
 import click
 
-from app.task import Task
+from safekey.app import SafeKey
 
 
 @click.group()
 def main():
-    """Task CLI built with Click"""
+    """Safekey CLI app built with Click"""
     pass
 
-#----------------------------------------------------------------
-# Command with argument
-#----------------------------------------------------------------
-@click.command()
-@click.argument("name", type=click.STRING,)
-def show(name):
-    """Show task info with given name"""    
-    t = Task(name)
-    print(t.show())
-
-
-#----------------------------------------------------------------
-# Command with argument, options
-#----------------------------------------------------------------
-def parse_parameters(ctx, param, value):
-    """Parase parameters from click options"""
-    params = {}
-    for item in value:
-        if "=" not in item:
-            print("Parameter should be in format: key=value")
-            sys.exit(1)
-        key, value = item.split("=")[0], "=".join(item.split("=")[1:])
-        if not key or not value:
-            print("Parameter should be in format: key=value")
-            sys.exit(1)
-        params[key] = value
-    return params
-
 
 @click.command()
-@click.argument("name", type=click.STRING)
 @click.option(
-    "-p", "--param",
-    required=False,
-    multiple=True,
+    "-a", "--appname",
     type=click.STRING,
-    callback=parse_parameters,
-    help="Input the parameters",
+    required=True,
+    help="Application name",
 )
-def run(name, param):
-    """Run task with given name"""
-    t = Task(name)
-    t.run(params=param)
+@click.option(
+    "-u", "--username",
+    type=click.STRING,
+    required=True,
+    help="Username registered",
+)
+@click.option(
+    "-p", "--password",
+    type=click.STRING,
+    required=True,
+    help="Password registered",
+)
+def add(appname, username, password):
+    """Add a new password"""    
+    safekey = SafeKey()
+    safekey.add_password(
+        appname=appname,
+        username=username,
+        password=password
+    )
 
 
-#----------------------------------------------------------------
-# Sub-command
-#----------------------------------------------------------------
-@click.group()
-def scheduler():
-    """Task sub-command"""
+@click.command()
+@click.option(
+    "-a", "--appname",
+    type=click.STRING,
+    required=True,
+    help="Application name",
+)
+def get(appname):
+    """Retrieve a password"""
+    safekey = SafeKey()
+    safekey.get_password(appname=appname)
+
+
+@click.command()
+def update():
+    """Update a password"""
+    pass
+
+@click.command()
+def remove():
+    """Remove a password"""
     pass
 
 
-@scheduler.command()
-def start():
-    """Start task scheduler"""
-    print("Starting task scheduler...")
-    print("Started!")
 
-
-@scheduler.command()
-def stop():
-    """Stop task scheduler"""
-    print("Stopping task scheduler...")
-    print("Stopped!")
-
-
-main.add_command(show)
-main.add_command(run)
-main.add_command(scheduler)
+main.add_command(add)
+main.add_command(get)
+main.add_command(update)
+main.add_command(remove)
 
 
 if __name__ == "__main__":
