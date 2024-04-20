@@ -18,22 +18,22 @@ def main():
 
     # Get sub-command
     get_parser = subparsers.add_parser('get', help='Retrieve a password')
-    get_parser.add_argument('--appname', type=str, help='App name or Username')
+    get_parser.add_argument('--appname', type=str, help='Application name')
     get_parser.set_defaults(func=safekey.get_password)
 
     # Update sub-command
     update_parser = subparsers.add_parser('update', help='Update a password')
-    update_parser.add_argument('--appname', type=str, help='App name or Username')
+    update_parser.add_argument('--appname', type=str, help='Application name')
     update_parser.add_argument('--new-password', type=str, help='New Password')
     update_parser.set_defaults(func=safekey.update_password)
 
     # Remove sub-command
     remove_parser = subparsers.add_parser('remove', help='Remove a password')
-    remove_parser.add_argument('--appname', type=str, help='App name or Username')
+    remove_parser.add_argument('--appname', type=str, help='Application name')
     remove_parser.set_defaults(func=safekey.remove_password)
 
     # List sub-command
-    list_parser = subparsers.add_parser('list', help='List all passwords')
+    list_parser = subparsers.add_parser('list', help='List all passwords of applications')
     list_parser.set_defaults(func=safekey.list_passwords)
 
     args = parser.parse_args()
