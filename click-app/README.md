@@ -1,8 +1,8 @@
-# Click CLI
+# click-app
 
 ## 1. Setup virtual environment
 
-Enter the `task-cli-click` directory, then create a virtual environment,
+Enter the `click-app` directory, then create a virtual environment,
 
 ```bash
 $ python3 -m venv .venv
@@ -14,26 +14,38 @@ Then activate the virtual environment by running:
 $ source .venv/bin/activate
 ```
 
-## 2. Install this `task` app
+## 2. Install cli app
 
-Install this CLI app with `editable` mode,
+Install this CLI app in `editable` mode,
 
 ```bash
 $ pip install -e .
 ```
 
-When done, it should have `task-cli-click` package installed with version `0.0.1`.
+When done, it should have `click-app` package installed with version `0.0.1`.
 
 Validate the installation,
 
 ```bash
-$ pip show task-cli-click
+$ pip show skcli
 ```
 
-## 3. `task` CLI commands
+## 3. `skcli` command usage
 
 Use the commands by following the `--help` instruction,
 
 ```bash
-$ task --help
+$ skcli --help
+Usage: skcli [OPTIONS] COMMAND [ARGS]...
+
+  Safekey CLI app built with Click
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  add     Add a new password
+  get     Retrieve a password
+  remove  Remove a password
+  update  Update a password
 ```
