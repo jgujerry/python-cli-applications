@@ -37,8 +37,8 @@ This would install the `safekey` package with `sk` command.
 First, make sure you have the CLI tool installed correctly, using `--help` to validate the installation.
 
 ```bash
-$ sk --help
-usage: sk [-h] {add,get,update,remove,list} ...
+$ skcli --help
+usage: skcli [-h] {add,get,update,remove,list} ...
 
 SafeKey CLI Tool
 
@@ -47,15 +47,15 @@ options:
 
 subcommands:
   {add,get,update,remove,list}
-    add                 Add a new login
+    add                 Add a new credential
     get                 Retrieve a password
     update              Update a password
     remove              Remove a password
-    list                List all passwords
+    list                List all passwords of applications
 ```
 
 Add a new login,
 
 ```bash
-$ sk add --appname test.com --username tester --password test12345
+$ skcli add --appname test.com --username tester --password test12345
 ```
