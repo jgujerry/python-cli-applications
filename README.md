@@ -14,5 +14,8 @@ There are several available packages for building CLI applications in Python.
 * [Cliff](https://github.com/openstack/cliff)
 * [Plac](https://github.com/ialbert/plac)
 
-In this project, we are going to build a CLI tool called **task**, i.e. python-cli-application. 
-This tool will be implemented using each package listed above.
+In this project, we are going to build a CLI tool to manage passwords of different applications, i.e. `skcli`. This tool will be implemented using each package listed above.
+
+For details, please refer to the documentation below.
+
+* [argparse - skcli](./argparse-app/README.md).
