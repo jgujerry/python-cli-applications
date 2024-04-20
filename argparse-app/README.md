@@ -1,4 +1,4 @@
-# argparse
+# argparse-app
 
 Build the password management CLI tool by using Python's built-in package: `argparse`.
 
