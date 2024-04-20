@@ -1,4 +1,3 @@
-import sys
 import click
 
 from safekey.app import SafeKey
@@ -53,15 +52,38 @@ def get(appname):
 
 
 @click.command()
-def update():
+@click.option(
+    "-a", "--appname",
+    type=click.STRING,
+    required=True,
+    help="Application name",
+)
+@click.option(
+    "-p", "--new-password",
+    type=click.STRING,
+    required=True,
+    help="New Password",
+)
+def update(appname, new_password):
     """Update a password"""
-    pass
+    safekey = SafeKey()
+    safekey.update_password(
+        appname=appname,
+        new_password=new_password
+    )
+
 
 @click.command()
-def remove():
+@click.option(
+    "-a", "--appname",
+    type=click.STRING,
+    required=True,
+    help="Application name",
+)
+def remove(appname):
     """Remove a password"""
-    pass
-
+    safekey = SafeKey()
+    safekey.remove_password(appname=appname)
 
 
 main.add_command(add)
