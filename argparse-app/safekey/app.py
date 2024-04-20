@@ -14,13 +14,13 @@ class SafeKey:
         # Load password entries from file
         try:
             with open('passwords.json', 'r') as file:
-                self.passwords = json.load(file)
+                self.safekeys = json.load(file)
         except FileNotFoundError:
-            self.passwords = {}
+            self.safekeys = {}
 
     def save_passwords(self):
         with open('passwords.json', 'w') as file:
-            json.dump(self.passwords, file)
+            json.dump(self.safekeys, file)
 
     def encrypt_password(self, password):
         return self.cipher.encrypt(password.encode()).decode()
@@ -33,13 +33,13 @@ class SafeKey:
         username = args.username
         password = args.password
         encrypted_password = self.encrypt_password(password)
-        self.passwords[appname] = {'username': username, 'password': encrypted_password}
+        self.safekeys[appname] = {'username': username, 'password': encrypted_password}
         self.save_passwords()
         print(f"Password added for {appname}")
 
     def get_password(self, args):
         appname = args.appname
-        entry = self.passwords.get(appname)
+        entry = self.safekeys.get(appname)
         if entry:
             print(f"Password for {appname}: {self.decrypt_password(entry['password'])}")
         else:
@@ -47,7 +47,7 @@ class SafeKey:
 
     def update_password(self, args):
         appname = args.appname
-        entry = self.passwords.get(appname)
+        entry = self.safekeys.get(appname)
         if entry:
             new_password = args.new_password
             encrypted_password = self.encrypt_password(new_password)
@@ -59,13 +59,13 @@ class SafeKey:
 
     def remove_password(self, args):
         appname = args.appname
-        if appname in self.passwords:
-            del self.passwords[appname]
+        if appname in self.safekeys:
+            del self.safekeys[appname]
             self.save_passwords()
             print(f"Password removed for {appname}")
         else:
             print("Password not found")
 
     def list_passwords(self, args):
-        for appname, details in self.passwords.items():
+        for appname, details in self.safekeys.items():
             print(f"Appname: {appname}, Username: {details['username']}")

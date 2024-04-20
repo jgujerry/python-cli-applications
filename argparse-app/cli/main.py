@@ -24,7 +24,7 @@ def main():
     # Update sub-command
     update_parser = subparsers.add_parser('update', help='Update a password')
     update_parser.add_argument('--appname', type=str, help='App name or Username')
-    update_parser.add_argument('new_password', type=str, help='New Password')
+    update_parser.add_argument('--new-password', type=str, help='New Password')
     update_parser.set_defaults(func=safekey.update_password)
 
     # Remove sub-command

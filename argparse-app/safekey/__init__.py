@@ -1,1 +1,1 @@
-from .core import SafeKey
+from .app import SafeKey
