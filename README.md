@@ -18,4 +18,15 @@ In this project, we are going to build a CLI tool to manage passwords of differe
 
 For details, please refer to the documentation below.
 
-* [argparse - skcli](./argparse-app/README.md).
+* [argparse - skcli](./argparse-app/README.md)
+* [click - skcli](./click-app/README.md)
+  
+
+## Contact
+
+If you have any question about this opinionated list, do not hesitate to contact me [@jgujerry](https://twitter.com/jgujerry) on X (Twitter) or open an issue on GitHub.
+
+
+## License
+
+This project is released under [MIT License](LICENSE)
