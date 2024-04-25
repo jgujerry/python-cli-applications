@@ -52,6 +52,13 @@ def get(appname):
 
 
 @click.command()
+def list():
+    """List all passwords"""
+    safekey = SafeKey()
+    safekey.list_passwords()
+
+
+@click.command()
 @click.option(
     "-a", "--appname",
     type=click.STRING,
@@ -88,6 +95,7 @@ def remove(appname):
 
 main.add_command(add)
 main.add_command(get)
+main.add_command(list)
 main.add_command(update)
 main.add_command(remove)
 
