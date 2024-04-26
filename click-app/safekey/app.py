@@ -1,9 +1,16 @@
 import json
+from pathlib import Path
 from cryptography.fernet import Fernet
 
 # Generate a key for encryption
 key = Fernet.generate_key()
 cipher = Fernet(key)
+
+CONFIG_DIR_FILE = Path.home() / '.skcli.ini'
+
+def get_secret_key():
+    path = 
+
 
 
 class SafeKey:
