@@ -1,3 +1,0 @@
-# Typer CLI
-
-

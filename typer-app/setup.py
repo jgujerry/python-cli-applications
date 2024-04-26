@@ -2,15 +2,16 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='task-cli-typer',
+    name='skcli',
     version='0.0.1',
     packages=find_packages(),
     install_requires=[
+        'cryptography',
         'typer',
     ],
     entry_points={
         'console_scripts': [
-            'task=cli.main:main',
+            'skcli=cli.main:app',
         ],
     },
 )
