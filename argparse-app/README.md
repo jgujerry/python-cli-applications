@@ -3,7 +3,7 @@
 Build the password management CLI tool by using Python's built-in package: `argparse`.
 
 
-## Setup a Virtual Environment
+## Setup virtual environment
 
 Create a virtual environment,
 
@@ -32,7 +32,7 @@ $ pip install -e .
 This would install the `safekey` package with `sk` command. 
 
 
-## How to use this CLI tool?
+## How to use `skcli`?
 
 First, make sure you have the CLI tool installed correctly, using `--help` to validate the installation.
 
@@ -52,10 +52,4 @@ subcommands:
     update              Update a password
     remove              Remove a password
     list                List all passwords of applications
-```
-
-Add a new login,
-
-```bash
-$ skcli add --appname test.com --username tester --password test12345
 ```

@@ -30,7 +30,7 @@ Validate the installation,
 $ pip show skcli
 ```
 
-## 3. `skcli` command usage
+## 3. How to use `skcli`?
 
 Use the commands by following the `--help` instruction,
 
@@ -46,6 +46,7 @@ Options:
 Commands:
   add     Add a new password
   get     Retrieve a password
+  list    List all passwords
   remove  Remove a password
   update  Update a password
 ```
