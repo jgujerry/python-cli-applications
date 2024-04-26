@@ -1,25 +1,48 @@
+import configparser
 import json
+from pathlib import Path
 from cryptography.fernet import Fernet
 
-# Generate a key for encryption
-key = Fernet.generate_key()
-cipher = Fernet(key)
+CONFIG_DIR = Path.home() / '.skcli'
+CONFIG_DIR.mkdir(exist_ok=True)
+
+CONFIG_FILE = CONFIG_DIR / '.config.ini'
+PASSWORD_FILE = CONFIG_DIR / 'passwords.json'
+
+
+def get_secret_key():
+    """
+    Warning: This is not a secure way to store the key. 
+    It is just for demonstration purposes.
+    """
+    config = configparser.ConfigParser()
+    config.read(CONFIG_FILE)
+    key = config.get("settings", "key", fallback=None)
+    
+    if key is None:
+        key = Fernet.generate_key()
+        config["settings"] = {"key": key.decode()}
+        with open(CONFIG_FILE, "w") as configfile:
+            config.write(configfile)
+    
+    return key
+
 
 
 class SafeKey:
     def __init__(self):
         # Generate a key for encryption
-        self.key = Fernet.generate_key()
+        self.key = get_secret_key()
         self.cipher = Fernet(self.key)
         # Load password entries from file
         try:
-            with open('passwords.json', 'r') as file:
+            with open(PASSWORD_FILE, 'r') as file:
                 self.safekeys = json.load(file)
         except FileNotFoundError:
             self.safekeys = {}
 
     def save_passwords(self):
-        with open('passwords.json', 'w') as file:
+        with open(PASSWORD_FILE, 'w') as file:
             json.dump(self.safekeys, file)
 
     def encrypt_password(self, password):
