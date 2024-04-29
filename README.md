@@ -21,7 +21,8 @@ The example CLI applications are listed below:
 * [argparse-app](./argparse-app/README.md)
 * [click-app](./click-app/README.md)
 * [typer-app](./typer-app/README.md)
-  
+* [python-fire-app](./python-fire-app/README.md)
+
 
 ## Contact
 
