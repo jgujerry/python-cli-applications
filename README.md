@@ -16,7 +16,7 @@ There are several available packages for building CLI applications in Python.
 
 In this project, we are going to build a CLI tool to manage passwords of different applications, i.e. `skcli`. This tool will be implemented using each package listed above.
 
-The example CLI applications are listed below:
+The example CLI applications are created, please see below:
 
 * [argparse-app](./argparse-app/README.md)
 * [click-app](./click-app/README.md)
