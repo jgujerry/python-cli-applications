@@ -38,4 +38,5 @@ Use the commands by following the `--help` instruction,
 ```bash
 $ skcli --help
 
+skcli >
 ```
