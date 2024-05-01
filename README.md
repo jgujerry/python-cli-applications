@@ -22,6 +22,7 @@ The example CLI applications are created, please see below:
 * [click-app](./click-app/README.md)
 * [typer-app](./typer-app/README.md)
 * [python-fire-app](./python-fire-app/README.md)
+* [prompt-toolkit-app](./prompt-toolkit-app/README.md)
 
 
 ## Contact
