@@ -36,4 +36,23 @@ Use the commands by following the `--help` instruction,
 
 ```bash
 $ skcli --help
+usage: skcli [-h] [-d] [-q] {add,get,list,remove,update} ...
+
+A simple password management CLI application.
+
+options:
+  -h, --help            show this help message and exit
+  -d, --debug           full application debug mode
+  -q, --quiet           suppress all console output
+
+sub-commands:
+  {add,get,list,remove,update}
+    add                 add a new password
+    get                 get a password
+    list                list all passwords
+    remove              remove a stored password
+    update              update an existing password
+
+Usage: skcli command --appname NAME [--username USERNAME] [--password PASSWORD]
+
 ```
