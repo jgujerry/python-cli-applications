@@ -24,6 +24,7 @@ The example CLI applications are created, please see below:
 * [python-fire-app](./python-fire-app/README.md)
 * [prompt-toolkit-app](./prompt-toolkit-app/README.md)
 * [cement-app](./cement-app/README.md)
+* [cliff-app](./cliff-app/README.md)
 
 
 ## Contact
