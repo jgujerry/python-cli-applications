@@ -13,5 +13,12 @@ setup(
         'console_scripts': [
             'skcli=cli.main:main',
         ],
+        'skcli.commands': [
+            'add = cli.commands.add:Add',
+            'get = cli.commands.get:Get',
+            'list = cli.commands.list:List',
+            'update = cli.commands.update:Update',
+            'remove = cli.commands.remove:Remove'
+        ],
     },
 )
