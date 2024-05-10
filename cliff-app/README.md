@@ -36,4 +36,26 @@ Use the commands by following the `--help` instruction,
 
 ```bash
 $ skcli --help
+usage: skcli [--version] [-v | -q] [--log-file LOG_FILE] [-h] [--debug]
+
+SKCLI Password Manager
+
+options:
+  --version             show program's version number and exit
+  -v, --verbose         Increase verbosity of output. Can be repeated.
+  -q, --quiet           Suppress output except warnings and errors.
+  --log-file LOG_FILE
+                        Specify a file to log output. Disabled by default.
+  -h, --help            Show help message and exit.
+  --debug               Show tracebacks on errors.
+
+Commands:
+  add  Add a new password
+  complete  print bash completion command (cliff)
+  get  Get a password
+  help  print detailed help for another command (cliff)
+  list  List all saved passwords
+  remove  Remove a password entry
+  update  Update an existing password
+
 ```
