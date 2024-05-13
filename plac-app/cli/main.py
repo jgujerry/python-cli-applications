@@ -38,7 +38,7 @@ def remove(appname: str):
 
 def main():
     if len(sys.argv) > 1:
-        command = sys.argv[1]
+        command = sys.argv[1].strip()
     else:
         print("Usage: skcli [command]")
         print("Commands: add, get, list, update, remove")
@@ -53,6 +53,7 @@ def main():
     }
 
     if command in commands:
+        print("================================================x", command)
         plac.call(commands[command])
     else:
         print("Unknown command. Available commands: add, get, list, update, remove")
