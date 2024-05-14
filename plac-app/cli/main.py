@@ -53,7 +53,6 @@ def main():
     }
 
     if command in commands:
-        print("================================================x", command)
         plac.call(commands[command])
     else:
         print("Unknown command. Available commands: add, get, list, update, remove")
