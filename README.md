@@ -26,6 +26,7 @@ The example CLI applications are created, please see below:
 * [prompt-toolkit-app](./prompt-toolkit-app/README.md)
 * [cement-app](./cement-app/README.md)
 * [cliff-app](./cliff-app/README.md)
+* [plac-app](./plac-app/README.md)
 
 
 ## Contact
