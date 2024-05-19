@@ -35,6 +35,50 @@ $ pip show skcli
 Use the commands by following the `--help` instruction,
 
 ```bash
-$ skcli --help
+$ skcli -h
+usage: skcli [-h] [-configfile CONFIGFILE]
+
+A minimal interface over a shelve object.
+
+options:
+  -h, --help            show this help message and exit
+  -configfile CONFIGFILE
+                        path name of the shelve
+```
+
+
+Enter into the CLI session, then use the command, or get the help,
+
+```bash
+$ skcli
+A minimal interface over a shelve object.
+Operating on conf.shelve.
+Use help to see the available commands.
+
+i> help
+
+special commands
+================
+.last_tb
+
+custom commands
+===============
+add  get  help  list  remove  update
+
+
+i> add -h
+usage: skcli add [-h] appname username password
+
+Add new password
+
+positional arguments:
+  appname
+  username
+  password
+
+options:
+  -h, --help  show this help message and exit
+
+i> 
 
 ```
