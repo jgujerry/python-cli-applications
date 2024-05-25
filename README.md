@@ -27,6 +27,7 @@ The example CLI applications are created, please see below:
 * [cement-app](./cement-app/README.md)
 * [cliff-app](./cliff-app/README.md)
 * [plac-app](./plac-app/README.md)
+* [docopt-ng-app](./docopt-ng-app/README.md)
 
 
 ## Contact
