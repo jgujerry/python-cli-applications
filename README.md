@@ -15,9 +15,9 @@ There are several available packages for building CLI applications in Python.
 * [Plac](https://github.com/ialbert/plac)
 * [Docopt-ng](https://github.com/jazzband/docopt-ng)
 
-## Applications
+## `skcli` for password management
 
-In this project, we are going to build a CLI app to manage passwords of different applications, i.e. `skcli`. This CLI app will be implemented using each package listed above.
+In this project, we are going to build a CLI app called `skcli` to manage password of different applications. This CLI app will be implemented by using each package listed above.
 
 For concrete implementation using each Python package, please see below:
 
@@ -30,7 +30,6 @@ For concrete implementation using each Python package, please see below:
 * [cliff-app](./cliff-app/README.md)
 * [plac-app](./plac-app/README.md)
 * [docopt-ng-app](./docopt-ng-app/README.md)
-
 
 To try each example CLI app, the steps are:
 
